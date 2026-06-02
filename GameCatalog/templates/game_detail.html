@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ game.title }}</h1>
+<img
+    class="detail-image"
+    src="{{ game.cover_image.url }}"
+>
+<p>{{ game.description }}</p>
+<p>
+    <strong>Release Date:</strong>
+    {{ game.release_date }}
+</p>
+<p>
+    <strong>Rating:</strong>
+    {{ game.rating }}
+</p>
+<p>
+    <strong>Price:</strong>
+    ${{ game.price }}
+</p>
+<p>
+    <strong>Multiplayer:</strong>
+    {{ game.is_multiplayer }}
+</p>
+<p>
+    <strong>Developer:</strong>
+    {{ game.developer }}
+</p>
+<p>
+    <strong>Genre:</strong>
+    {{ game.genre }}
+</p>
+<h2>Platforms</h2>
+<ul>
+{% for platform in game.platforms.all %}
+    <li>{{ platform.name }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

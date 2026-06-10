@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Delete Game</h1>
+<p>
+    Are you sure you want to delete:
+</p>
+<h2>
+    {{ game.title }}
+</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button class="btn" type="submit">
+        Yes, Delete
+    </button>
+    <a
+        class="btn"
+        href="/games/"
+    >
+        Cancel
+    </a>
+</form>
+{% endblock %}

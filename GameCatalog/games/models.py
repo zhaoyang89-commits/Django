@@ -42,7 +42,7 @@ class Game(models.Model):
         return self.title
 # one-to-one
 class GameDetail(models.Model):
-    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    game = models.OneToOneField(Game, on_delete=models.CASCADE)
     engine = models.CharField(max_length=100)
     hours_to_complete = models.IntegerField()
     steam_score = models.IntegerField()
